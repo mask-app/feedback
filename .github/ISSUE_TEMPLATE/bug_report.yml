@@ -1,0 +1,115 @@
+name: 问题反馈 / Bug Report
+description: 报告使用中遇到的问题或异常 / Report a problem or unexpected behavior
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请尽量提供清晰、可复现的信息，帮助我们更快定位问题。
+        Please provide clear and reproducible details so we can investigate faster.
+
+  - type: input
+    id: summary
+    attributes:
+      label: 问题摘要 / Summary
+      description: 用一句话概括你遇到的问题 / Summarize the issue in one sentence
+      placeholder: |
+        例如：导出翻译结果时应用闪退
+        Example: The app crashes when exporting translation results
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述 / Description
+      description: 请描述问题表现、出现时机和影响范围 / Describe what happened, when it happened, and the impact
+      placeholder: |
+        请详细描述问题。
+        Please describe the problem in detail.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to Reproduce
+      description: 按顺序列出能稳定或大致复现问题的步骤 / List the steps that reproduce the issue consistently or approximately
+      placeholder: |
+        1. 打开……
+        2. 点击……
+        3. 出现……
+
+        1. Open ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果 / Expected Behavior
+      description: 你原本预期应该发生什么 / What you expected to happen
+      placeholder: |
+        例如：应成功导出文件且不退出应用
+        Example: The file should export successfully without the app closing
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / Actual Behavior
+      description: 实际发生了什么，包括错误提示或异常现象 / What actually happened, including any errors or abnormal behavior
+      placeholder: |
+        例如：点击导出后应用立即退出，没有提示
+        Example: The app closes immediately after tapping export, with no message
+    validations:
+      required: false
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 平台 / Platform
+      description: 问题出现在哪个平台 / Which platform is affected
+      options:
+        - iPhone
+        - iPad
+        - Mac
+        - Other / 其他
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息 / Environment
+      description: 可填写系统版本、App 版本、设备型号等 / Include OS version, app version, device model, and related details
+      placeholder: |
+        - 系统版本 / OS version:
+        - App 版本 / App version:
+        - 设备型号 / Device model:
+        - 其他信息 / Other details:
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 附加信息 / Additional Context
+      description: 可补充截图、录屏说明、日志摘要或其他上下文 / Add screenshots, recording notes, log summaries, or other context
+      placeholder: 请补充任何有助于定位问题的信息 / Add anything else that may help us investigate
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私提醒确认 / Privacy Confirmation
+      description: 提交前请确认未包含敏感或隐私数据 / Confirm that no sensitive or private data is included
+      options:
+        - label: 我已确认不会上传隐私、敏感信息或未脱敏数据。因我个人原因造成的隐私泄露，作者无需负责。 / I confirm that I am not uploading private, sensitive, or unredacted data. The author is not responsible for any privacy breaches caused by personal reasons.
+          required: true
